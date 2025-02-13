@@ -22,7 +22,7 @@ const Badge = ({
 	if (zeroBehavior === "no-render" && invalidAmount) return;
 
 	return (
-		<div
+		<span
 			className="Badge"
 			style={{
 				backgroundColor: color,
@@ -39,7 +39,7 @@ const Badge = ({
 				</span>
 			</span>
 			<span>{title}</span>
-		</div>
+		</span>
 	);
 };
 
