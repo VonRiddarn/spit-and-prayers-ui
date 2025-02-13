@@ -1,0 +1,16 @@
+.Badge {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+
+	max-width: fit-content;
+}
+
+.BadgeIcon {
+	margin-right: 1rem;
+
+	span:last-child {
+		margin-left: 0.5rem;
+	}
+}
