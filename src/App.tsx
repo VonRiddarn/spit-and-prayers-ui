@@ -1,12 +1,24 @@
 import "./App.scss";
 import Badge from "./components/ui/Badge/Badge";
+import Divider from "./components/ui/Divider/Divider";
 
 function App() {
 	return (
 		<>
 			<h1>💦 Spit and prayers UI 🙏</h1>
 			<p>A component library surviving purely on willpower and questionable decisions.</p>
-
+			<Divider />
+			<div style={{ display: "flex", alignItems: "center", width: "100%", height: "64px" }}>
+				<p>🐶</p>
+				<Divider orientation="vertical" />
+				<p>🐱</p>
+				<Divider orientation="vertical" />
+				<p>🐨</p>
+				<Divider orientation="vertical" />
+				<p>🦝</p>
+				<Divider orientation="vertical" />
+				<p>🦊</p>
+			</div>
 			<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
 				<Badge icon="ⓘ" color="blue" title="Informational" />
 				<Badge icon="❤" zeroBehavior="show" title="Likes" />
