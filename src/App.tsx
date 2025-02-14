@@ -4,8 +4,17 @@ import Accordion from "./components/ui/Accordion/Accordion";
 function App() {
 	return (
 		<>
-			<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-				<Accordion title="House Pets (Click)" interaction="click">
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					gap: "1rem",
+					border: "2px dotted white",
+					padding: "1rem",
+				}}
+			>
+				<h2 style={{ borderBottom: "1px solid gray", width: "fit-content" }}>Accordions</h2>
+				<Accordion title="House Pets (Hover)" interaction="hover">
 					<Accordion title="Cats (Click)" interaction="click">
 						<h3>All About Cats</h3>
 						<p>
