@@ -1,5 +1,6 @@
 import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
+import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 
 function App() {
 	return (
@@ -77,6 +78,17 @@ function App() {
 						</p>
 					</Accordion>
 				</Accordion>
+			</div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					gap: "1rem",
+					border: "2px dotted white",
+					padding: "1rem",
+				}}
+			>
+				<LegendInputField title="Test" type="text" />
 			</div>
 		</>
 	);
