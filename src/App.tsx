@@ -88,7 +88,8 @@ function App() {
 					padding: "1rem",
 				}}
 			>
-				<LegendInputField title="Test" type="text" />
+				<LegendInputField title="Username" type="text" />
+				<LegendInputField title="Password" type="password" />
 			</div>
 		</>
 	);
