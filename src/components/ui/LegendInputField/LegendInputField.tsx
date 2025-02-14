@@ -7,7 +7,7 @@ type LegendInputFieldProps = {
 
 const LegendInputField = ({ title, type }: LegendInputFieldProps) => {
 	return (
-		<fieldset>
+		<fieldset className="LegendInputField">
 			<legend>{title}</legend>
 			<input type={type} />
 		</fieldset>

@@ -1,0 +1,39 @@
+$test-font-size: 10em;
+$test-width: 100%;
+$test-clearance: 1rem; // NOT CUSTOM!
+
+$test-width-left: calc($test-clearance);
+$test-width-center: calc($test-width * 0.5);
+$test-width-right: calc($test-width * 0.9);
+
+// TODO: Fix this shit.
+// The problem:
+// We want to be able to use center and right as margins for the legend text
+// Left is working just fine with the current calculations.
+
+.LegendInputField {
+	padding: 0;
+	border: 2px solid #ffffff;
+	border-radius: 4px; // Round, Square, Subtle
+
+	&:focus-within {
+		border-color: #3572e4;
+	}
+
+	legend {
+		border: 2px solid rgba(255, 0, 0, 0.055);
+		margin-left: calc($test-width-left - calc($test-clearance * 0.5)); // Left, Center, Right
+		padding: 0 $test-clearance;
+		font-size: calc($test-font-size / 2); // Custom
+	}
+
+	input {
+		width: 100%;
+		height: 100%;
+		font-size: calc($test-font-size * 0.42); // "fit" | string if === "fit" -> calc
+
+		&:focus {
+			outline: 0;
+		}
+	}
+}
