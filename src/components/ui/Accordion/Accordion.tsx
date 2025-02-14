@@ -33,6 +33,7 @@ const Accordion = ({
 			<h2
 				className="AccordionTitle"
 				onClick={interaction === "click" ? () => setExpanded(!expanded) : undefined}
+				style={{ cursor: interaction === "click" ? "pointer" : "default" }}
 			>
 				{title}
 			</h2>
