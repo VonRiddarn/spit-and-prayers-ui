@@ -14,7 +14,7 @@ function App() {
 				}}
 			>
 				<h2 style={{ borderBottom: "1px solid gray", width: "fit-content" }}>Accordions</h2>
-				<Accordion title="House Pets (Hover)" interaction="hover">
+				<Accordion title="House Pets (Hover)" interaction="hover" indicator={false}>
 					<Accordion title="Cats (Click)" interaction="click">
 						<h3>All About Cats</h3>
 						<p>
@@ -57,7 +57,7 @@ function App() {
 						humans for centuries. Some fish, like the clownfish, have symbiotic relationships with
 						other marine creatures.
 					</p>
-					<Accordion title="Species of Fish (Hover)" interaction="hover">
+					<Accordion title="Species of Fish (Hover)" interaction="hover" indicator={false}>
 						<h3>Popular Fish Species</h3>
 						<ul>
 							<li>Clownfish</li>
