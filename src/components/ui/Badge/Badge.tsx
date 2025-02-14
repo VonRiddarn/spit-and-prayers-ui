@@ -4,10 +4,9 @@ type BadgeProps = {
 	icon: string;
 	amount?: number;
 	zeroBehavior?: "show" | "hide" | "no-render";
-	title: string;
+	title: string | { singular: string; plural: string };
 	color?: string;
 	height?: string;
-	paddingMp?: number;
 };
 
 const Badge = ({
@@ -38,7 +37,13 @@ const Badge = ({
 					{zeroBehavior === "hide" && invalidAmount ? null : <span>{amount || 0}</span>}
 				</span>
 			</span>
-			<span>{title}</span>
+			<span>
+				{typeof title === "string"
+					? title
+					: amount === 1 || amount === -1
+					? title.singular
+					: title.plural}
+			</span>
 		</span>
 	);
 };
