@@ -4,3 +4,12 @@
 	background-color: #0d1118;
 	color: rgb(230, 230, 230);
 }
+
+// Accordion css selectors
+.AccordionInteractionElement:hover {
+	background-color: rgba(81, 101, 148, 0.3);
+}
+
+.AccordionActive {
+	background-color: rgba(81, 101, 148, 0.3);
+}

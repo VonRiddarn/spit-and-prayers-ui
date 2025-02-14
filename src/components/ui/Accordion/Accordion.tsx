@@ -27,12 +27,14 @@ const Accordion = ({
 
 	return (
 		<section
-			className="Accordion"
+			className={`Accordion ${interaction === "hover" ? "AccordionInteractionElement" : ""} ${
+				expanded ? "AccordionActive" : ""
+			}`}
 			onMouseEnter={interaction === "hover" ? () => setExpanded(true) : undefined}
 			onMouseLeave={interaction === "hover" ? () => setExpanded(false) : undefined}
 		>
 			<span
-				className="AccordionTitle"
+				className={`AccordionTitle ${interaction === "click" ? "AccordionInteractionElement" : ""}`}
 				onClick={interaction === "click" ? () => setExpanded(!expanded) : undefined}
 				style={{
 					cursor: interaction === "click" ? "pointer" : "default",
