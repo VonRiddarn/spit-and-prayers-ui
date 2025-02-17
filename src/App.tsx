@@ -95,18 +95,31 @@ function App() {
 				<p>Username: {echoUsername}</p>
 				<p>Password: {echoPassword}</p>
 				<LegendInputField
-					title="Username"
+					title="Username *"
 					type="text"
 					placeholder="Megamind_1997"
 					value={echoUsername}
 					onChange={(e) => setEchoUsername(e.target.value)}
 				/>
 				<LegendInputField
-					title="Password"
+					title="Password *"
 					type="password"
 					value={echoPassword}
 					onChange={(e) => setEchoPassword(e.target.value)}
 				/>
+			</div>
+			<div
+				id="legend-div"
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					gap: "1rem",
+					border: "2px dotted white",
+					padding: "1rem",
+				}}
+			>
+				<LegendInputField title="Email *" type="email" placeholder="example@example.ex" />
+				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
 			</div>
 		</>
 	);
