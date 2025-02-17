@@ -13,27 +13,3 @@
 .AccordionActive {
 	background-color: rgba(81, 101, 148, 0.3);
 }
-
-// LegendInputField css selectors
-
-.LegendInputField {
-	background-color: transparent;
-	// legend
-	// input
-}
-
-#legend-div {
-	// app-specific div
-	.LegendInputField {
-		color: rgb(255, 249, 165);
-		border-color: rgb(112, 146, 84);
-
-		legend {
-			font-size: x-large;
-		}
-
-		input {
-			font-size: xx-large;
-		}
-	}
-}

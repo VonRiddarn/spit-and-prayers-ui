@@ -2,6 +2,7 @@ import React from "react";
 import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
+import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -107,19 +108,8 @@ function App() {
 					value={echoPassword}
 					onChange={(e) => setEchoPassword(e.target.value)}
 				/>
-			</div>
-			<div
-				id="legend-div"
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					gap: "1rem",
-					border: "2px dotted white",
-					padding: "1rem",
-				}}
-			>
-				<LegendInputField title="Email *" type="email" placeholder="example@example.ex" />
-				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
+
+				<LegendTextArea title="Message" />
 			</div>
 		</>
 	);
