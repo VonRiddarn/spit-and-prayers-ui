@@ -1,13 +1,14 @@
 $font-size: 1em;
-$legend-clearance: 0.5em; // NOT CUSTOM (?)
-$input-clearance: calc($font-size * 0.5);
-$border: 6px;
+$legend-clearance: 0.5em;
+$input-clearance: 0.25em;
+$border-radius: 6px;
 
 .LegendInputField {
 	padding: 0;
 	border: 2px solid #ffffff;
-	border-radius: $border;
+	border-radius: $border-radius;
 	width: 25%;
+	height: 200px;
 
 	* {
 		color: unset;
@@ -33,7 +34,7 @@ $border: 6px;
 		padding-left: $input-clearance;
 		padding-bottom: calc($input-clearance * 0.5);
 
-		border-radius: $border;
+		border-radius: $border-radius;
 		font-size: $font-size;
 
 		&:focus {
