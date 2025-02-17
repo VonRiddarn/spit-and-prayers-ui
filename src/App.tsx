@@ -10,16 +10,7 @@ function App() {
 
 	return (
 		<>
-			<div
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					gap: "1rem",
-					border: "2px dotted white",
-					padding: "1rem",
-				}}
-			>
-				<h2 style={{ borderBottom: "1px solid gray", width: "fit-content" }}>Accordions</h2>
+			<Accordion title="Accordions" interaction="click">
 				<Accordion title="House Pets (Hover)" interaction="hover" indicator={false}>
 					<Accordion title="Cats (Click)" interaction="click">
 						<h3>All About Cats</h3>
@@ -83,25 +74,8 @@ function App() {
 						</p>
 					</Accordion>
 				</Accordion>
-			</div>
-			<div
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					gap: "1rem",
-					border: "2px dotted white",
-					padding: "1rem",
-				}}
-			>
-				<span>
-					<h2 style={{ display: "inline", borderBottom: "1px solid gray", width: "fit-content" }}>
-						LegendInputFields
-					</h2>
-					<h2 style={{ display: "inline" }}> & </h2>
-					<h2 style={{ display: "inline", borderBottom: "1px solid gray", width: "fit-content" }}>
-						LegendTextArea
-					</h2>
-				</span>
+			</Accordion>
+			<Accordion title="Legend inputs (field and textarea)" interaction="click">
 				<p>Username: {echoUsername}</p>
 				<p>Password: {echoPassword}</p>
 				<LegendInputField
@@ -118,29 +92,11 @@ function App() {
 				/>
 
 				<h2>Form example:</h2>
-				<LegendInputField
-					title="Name"
-					type="text"
-					placeholder="John Doe"
-					value={echoPassword}
-					onChange={(e) => setEchoPassword(e.target.value)}
-				/>
-				<LegendInputField
-					title="Email"
-					type="email"
-					placeholder="example.email@example.com"
-					value={echoPassword}
-					onChange={(e) => setEchoPassword(e.target.value)}
-				/>
-				<LegendInputField
-					title="Phone number"
-					type="text"
-					placeholder="012 - 345 67 89"
-					value={echoPassword}
-					onChange={(e) => setEchoPassword(e.target.value)}
-				/>
+				<LegendInputField title="Name" type="text" placeholder="John Doe" />
+				<LegendInputField title="Email" type="email" placeholder="example.email@example.com" />
+				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
 				<LegendTextArea title="Message" placeholder="Dear mr company..." />
-			</div>
+			</Accordion>
 		</>
 	);
 }
