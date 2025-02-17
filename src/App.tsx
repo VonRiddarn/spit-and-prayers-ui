@@ -93,6 +93,9 @@ function App() {
 					padding: "1rem",
 				}}
 			>
+				<h2 style={{ borderBottom: "1px solid gray", width: "fit-content" }}>
+					LegendInputFields & LegendTextArea
+				</h2>
 				<p>Username: {echoUsername}</p>
 				<p>Password: {echoPassword}</p>
 				<LegendInputField
