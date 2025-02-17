@@ -93,15 +93,20 @@ function App() {
 					padding: "1rem",
 				}}
 			>
-				<h2 style={{ borderBottom: "1px solid gray", width: "fit-content" }}>
-					LegendInputFields & LegendTextArea
-				</h2>
+				<span>
+					<h2 style={{ display: "inline", borderBottom: "1px solid gray", width: "fit-content" }}>
+						LegendInputFields
+					</h2>
+					<h2 style={{ display: "inline" }}> & </h2>
+					<h2 style={{ display: "inline", borderBottom: "1px solid gray", width: "fit-content" }}>
+						LegendTextArea
+					</h2>
+				</span>
 				<p>Username: {echoUsername}</p>
 				<p>Password: {echoPassword}</p>
 				<LegendInputField
 					title="Username *"
 					type="text"
-					placeholder="Megamind_1997"
 					value={echoUsername}
 					onChange={(e) => setEchoUsername(e.target.value)}
 				/>
@@ -112,7 +117,29 @@ function App() {
 					onChange={(e) => setEchoPassword(e.target.value)}
 				/>
 
-				<LegendTextArea title="Message" />
+				<h2>Form example:</h2>
+				<LegendInputField
+					title="Name"
+					type="text"
+					placeholder="John Doe"
+					value={echoPassword}
+					onChange={(e) => setEchoPassword(e.target.value)}
+				/>
+				<LegendInputField
+					title="Email"
+					type="email"
+					placeholder="example.email@example.com"
+					value={echoPassword}
+					onChange={(e) => setEchoPassword(e.target.value)}
+				/>
+				<LegendInputField
+					title="Phone number"
+					type="text"
+					placeholder="012 - 345 67 89"
+					value={echoPassword}
+					onChange={(e) => setEchoPassword(e.target.value)}
+				/>
+				<LegendTextArea title="Message" placeholder="Dear mr company..." />
 			</div>
 		</>
 	);
