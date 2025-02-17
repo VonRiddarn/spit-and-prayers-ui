@@ -1,8 +1,11 @@
+import React from "react";
 import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 
 function App() {
+	const [echoText, setEchoText] = React.useState("");
+
 	return (
 		<>
 			<div
@@ -88,8 +91,15 @@ function App() {
 					padding: "1rem",
 				}}
 			>
-				<LegendInputField title="Username" type="text" />
-				<LegendInputField title="Password" type="password" />
+				<h2>{echoText}</h2>
+				<LegendInputField
+					title="Username"
+					type="text"
+					placeholder="Megamind_1997"
+					value={echoText}
+					onChange={(e) => setEchoText(e.target.value)}
+				/>
+				<LegendInputField title="Password" placeholder="Test" type="password" />
 			</div>
 		</>
 	);
