@@ -1,0 +1,46 @@
+$font-size: 1em;
+$legend-clearance: 0.5em;
+$input-clearance: 0.25em;
+$border-radius: 6px;
+
+.LegendTextArea {
+	padding: 0;
+	border: 2px solid #ffffff;
+	border-radius: $border-radius;
+	width: 50%;
+	height: 200px;
+
+	* {
+		color: unset;
+	}
+
+	&:focus-within {
+		border-color: #3572e4;
+	}
+
+	legend {
+		margin-left: 0.5em; // TODO: Add left, center, right
+		padding: 0 $legend-clearance;
+		font-size: calc($font-size * 0.95);
+	}
+
+	textarea {
+		background-color: transparent;
+		border: unset;
+
+		width: 100%;
+		height: 100%;
+
+		resize: none;
+
+		padding-left: $input-clearance;
+		padding-bottom: calc($input-clearance * 0.5);
+
+		border-radius: $border-radius;
+		font-size: $font-size;
+
+		&:focus {
+			outline: 0;
+		}
+	}
+}
