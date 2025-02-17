@@ -1,37 +1,40 @@
-$test-font-size: 3em; // Test: 10em
-$test-width: 15%; // Test: 100%
-$test-clearance: 1rem; // NOT CUSTOM (?)
-
-$test-width-left: calc($test-clearance);
-$test-width-center: calc($test-width * 0.5);
-$test-width-right: calc($test-width * 0.9);
-
-// TODO: Fix this shit.
-// The problem:
-// We want to be able to use center and right as margins for the legend text
-// Left is working just fine with the current calculations.
+$font-size: 1em;
+$legend-clearance: 0.5em; // NOT CUSTOM (?)
+$input-clearance: calc($font-size * 0.5);
+$border: 6px;
 
 .LegendInputField {
 	padding: 0;
 	border: 2px solid #ffffff;
-	border-radius: 4px; // Round, Square, Subtle
-	width: $test-width;
+	border-radius: $border;
+	width: 25%;
+
+	* {
+		color: unset;
+	}
 
 	&:focus-within {
 		border-color: #3572e4;
 	}
 
 	legend {
-		border: 2px solid rgba(255, 0, 0, 0.055);
-		margin-left: calc($test-width-left - calc($test-clearance * 0.5)); // Left, Center, Right
-		padding: 0 $test-clearance;
-		font-size: calc($test-font-size / 2); // Custom
+		margin-left: 0.5em; // TODO: Add left, center, right
+		padding: 0 $legend-clearance;
+		font-size: calc($font-size * 0.95);
 	}
 
 	input {
+		background-color: transparent;
+		border: unset;
+
 		width: 100%;
 		height: 100%;
-		font-size: calc($test-font-size * 0.42); // "fit" | string if === "fit" -> calc
+
+		padding-left: $input-clearance;
+		padding-bottom: calc($input-clearance * 0.5);
+
+		border-radius: $border;
+		font-size: $font-size;
 
 		&:focus {
 			outline: 0;
