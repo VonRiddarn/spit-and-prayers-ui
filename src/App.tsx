@@ -4,7 +4,7 @@ import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
 import ReorderableList from "./widgets/ReorderableList/ReorderableList";
-import ReorderableListItem from "./widgets/ReorderableList/ReorderableListElement/ReorderableListItem";
+import { mockCards } from "./data/mockCards";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -99,39 +99,8 @@ function App() {
 				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
 				<LegendTextArea title="Message" placeholder="Dear mr company..." />
 			</Accordion>
-			<Accordion title="Dragable list" interaction="click">
-				<ReorderableList>
-					<ReorderableListItem>
-						<article>
-							<div>
-								<h2>Test 1</h2>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
-								</p>
-							</div>
-						</article>
-					</ReorderableListItem>
-					<ReorderableListItem>
-						<article>
-							<div>
-								<h2>Test 2</h2>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
-								</p>
-							</div>
-						</article>
-					</ReorderableListItem>
-					<ReorderableListItem>
-						<article>
-							<div>
-								<h2>Test 3</h2>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
-								</p>
-							</div>
-						</article>
-					</ReorderableListItem>
-				</ReorderableList>
+			<Accordion title="Reorderable list" interaction="click">
+				<ReorderableList items={mockCards} />
 			</Accordion>
 		</>
 	);

@@ -1,14 +1,23 @@
+import React from "react";
 import "./ReorderableList.scss";
-import ReorderableListItem from "./ReorderableListElement/ReorderableListItem";
+import ReorderableItemInternal from "./ReorderableItemInternal/ReorderableItemInternal";
 
 type ReorderableListProps = {
-	children:
-		| React.ReactElement<typeof ReorderableListItem>
-		| React.ReactElement<typeof ReorderableListItem>[];
+	items: React.ReactNode[];
 };
 
-const ReorderableList = ({ children }: ReorderableListProps) => {
-	return <ul className="ReorderableList">{children}</ul>;
+const ReorderableList = ({ items }: ReorderableListProps) => {
+	const [allItems, setAllItems] = React.useState(items);
+
+	return (
+		<ul className="ReorderableList">
+			{items.map((item, index) => (
+				<ReorderableItemInternal key={index} itemsState={{ allItems, setAllItems }}>
+					{item}
+				</ReorderableItemInternal>
+			))}
+		</ul>
+	);
 };
 
 export default ReorderableList;
