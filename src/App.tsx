@@ -3,8 +3,7 @@ import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
-import DragableList from "./features/DragableList/components/DragableList/DragableList";
-import DragableListElement from "./features/DragableList/components/DragableListElement/DragableListElement";
+import ReorderableList from "./widgets/ReorderableList/ReorderableList";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -100,11 +99,12 @@ function App() {
 				<LegendTextArea title="Message" placeholder="Dear mr company..." />
 			</Accordion>
 			<Accordion title="Dragable list" interaction="click">
-				<DragableList>
-					<DragableListElement>Element 1</DragableListElement>
-					<DragableListElement>Element 2</DragableListElement>
-					<DragableListElement>Element 3</DragableListElement>
-				</DragableList>
+				<ReorderableList>
+					<li>test</li>
+					<li>test</li>
+					<li>test</li>
+					<li>test</li>
+				</ReorderableList>
 			</Accordion>
 		</>
 	);
