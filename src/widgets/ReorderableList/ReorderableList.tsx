@@ -1,5 +1,5 @@
 import "./ReorderableList.scss";
-import ReorderableListItem from "./ReorderableListElement/ReorderableListElement";
+import ReorderableListItem from "./ReorderableListElement/ReorderableListItem";
 
 type ReorderableListProps = {
 	children:
@@ -7,6 +7,8 @@ type ReorderableListProps = {
 		| React.ReactElement<typeof ReorderableListItem>[];
 };
 
-const ReorderableList = ({ children }: ReorderableListProps) => <ul>{children}</ul>;
+const ReorderableList = ({ children }: ReorderableListProps) => {
+	return <ul className="ReorderableList">{children}</ul>;
+};
 
 export default ReorderableList;

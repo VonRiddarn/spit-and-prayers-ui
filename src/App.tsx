@@ -4,6 +4,7 @@ import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
 import ReorderableList from "./widgets/ReorderableList/ReorderableList";
+import ReorderableListItem from "./widgets/ReorderableList/ReorderableListElement/ReorderableListItem";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -100,10 +101,36 @@ function App() {
 			</Accordion>
 			<Accordion title="Dragable list" interaction="click">
 				<ReorderableList>
-					<li>test</li>
-					<li>test</li>
-					<li>test</li>
-					<li>test</li>
+					<ReorderableListItem>
+						<article>
+							<div>
+								<h2>Test 1</h2>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
+								</p>
+							</div>
+						</article>
+					</ReorderableListItem>
+					<ReorderableListItem>
+						<article>
+							<div>
+								<h2>Test 2</h2>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
+								</p>
+							</div>
+						</article>
+					</ReorderableListItem>
+					<ReorderableListItem>
+						<article>
+							<div>
+								<h2>Test 3</h2>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, commodi!
+								</p>
+							</div>
+						</article>
+					</ReorderableListItem>
 				</ReorderableList>
 			</Accordion>
 		</>
