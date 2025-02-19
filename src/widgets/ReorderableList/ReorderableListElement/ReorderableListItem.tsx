@@ -13,7 +13,9 @@ const ReorderableListItem = ({ children }: ReorderableListItemProp) => {
 			className={`ReorderableListItem${isDragging ? " Dragging" : ""}`}
 			draggable={true}
 			onDragStart={() => {
-				setIsDragging(true);
+				setTimeout(() => {
+					setIsDragging(true);
+				}, 0);
 			}}
 			onDragEnd={() => {
 				setIsDragging(false);
