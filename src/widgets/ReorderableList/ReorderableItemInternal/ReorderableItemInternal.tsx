@@ -8,6 +8,8 @@ type ReorderableItemInternalProps = {
 	};
 };
 
+// TODO: F this noise. Whatever. Fix this shit some other day.
+
 const ReorderableItemInternal = ({ children, itemsState }: ReorderableItemInternalProps) => {
 	const [isDragging, setIsDragging] = React.useState(false);
 
