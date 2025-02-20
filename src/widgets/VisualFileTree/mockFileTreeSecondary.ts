@@ -76,12 +76,12 @@ export const mockFileTreeSecondary: VisualFileType = {
 						{
 							name: "sonnets.txt",
 							indentation: 3,
-							indentationStops: [0],
+							indentationStops: [0, 1],
 						},
 						{
 							name: "haikus.txt",
 							indentation: 3,
-							indentationStops: [0],
+							indentationStops: [0, 1],
 						},
 					],
 				},
