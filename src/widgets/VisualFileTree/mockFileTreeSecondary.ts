@@ -52,12 +52,12 @@ export const mockFileTreeSecondary: VisualFileType = {
 						{
 							name: "cell-structure.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 						{
 							name: "genetics-overview.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 					],
 				},
@@ -76,12 +76,12 @@ export const mockFileTreeSecondary: VisualFileType = {
 						{
 							name: "sonnets.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 						{
 							name: "haikus.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 					],
 				},
@@ -93,12 +93,12 @@ export const mockFileTreeSecondary: VisualFileType = {
 						{
 							name: "mystery-novel.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 						{
 							name: "sci-fi-novel.txt",
 							indentation: 3,
-							indentationStops: [0, 1],
+							indentationStops: [0],
 						},
 					],
 				},

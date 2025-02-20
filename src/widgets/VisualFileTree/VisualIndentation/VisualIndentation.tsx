@@ -13,7 +13,7 @@ const VisualIndentation = ({ indentation, indentationStops }: VisualIndentationP
 					? "│\u00A0\u00A0"
 					: i === indentation - 1
 					? "└──\u00A0"
-					: "\u00A0\u00A0"}
+					: "\u00A0\u00A0\u00A0\u00A0"}
 			</span>
 		))}
 	</span>
