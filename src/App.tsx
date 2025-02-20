@@ -3,6 +3,10 @@ import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
+import FodlerStructureVisualizer from "./widgets/VisualFileTree/VisualFileTree";
+import VisualFile from "./widgets/VisualFileTree/VisualFilte/VisualFile";
+import VisualFileTree from "./widgets/VisualFileTree/VisualFileTree";
+import { mockFileTree } from "./widgets/VisualFileTree/mockFileTree";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -96,6 +100,9 @@ function App() {
 				<LegendInputField title="Email" type="email" placeholder="example.email@example.com" />
 				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
 				<LegendTextArea title="Message" placeholder="Dear mr company..." />
+			</Accordion>
+			<Accordion title="Folder structure visualizer" interaction="click">
+				<VisualFileTree root={mockFileTree} />
 			</Accordion>
 		</>
 	);
