@@ -7,51 +7,39 @@ type ReorderableListProps = {
 };
 
 const ReorderableList = ({ items }: ReorderableListProps) => {
-	let oldIndex = 0;
-	let newIndex = 0;
-
 	const [allItems, setAllItems] = React.useState(items);
+	const [draggedIndex, setDraggedIndex] = React.useState<number | null>(null);
+
+	const handleDragStart = (index: number) => {
+		setDraggedIndex(index);
+	};
+
+	const handleDragOver = (event: React.DragEvent<HTMLLIElement>, index: number) => {
+		event.preventDefault();
+		if (draggedIndex === null || draggedIndex === index) return;
+
+		const updatedItems = [...allItems];
+		const [draggedItem] = updatedItems.splice(draggedIndex, 1);
+		updatedItems.splice(index, 0, draggedItem);
+
+		setDraggedIndex(index);
+		setAllItems(updatedItems);
+	};
+
+	const handleDrop = () => {
+		setDraggedIndex(null);
+	};
 
 	return (
-		<ul
-			className="ReorderableList"
-			onDragStart={(event) => {
-				// set old index from currently being dragged element
-				const target = event.target as HTMLElement;
-				oldIndex = Number(target.closest("li")?.id);
-			}}
-			onDrag={(event) => {
-				// set old index from currently being dragged element
-				const target = event.target as HTMLElement;
-				oldIndex = Number(target.closest("li")?.id);
-			}}
-			onDragOver={(event) => {
-				// prevent default actions
-				event.preventDefault();
-			}}
-			onDrop={(event) => {
-				// get new index to update list
-				const target = event.target as HTMLElement;
-				newIndex = Number(target.closest("li")?.id);
-
-				// copy the todoItems as they can't be mutated directly
-				const allItemsCopy = [...allItems];
-
-				// get the value of the item
-				const todoItemText = allItemsCopy[oldIndex];
-
-				// delete the item from its previous index
-				allItemsCopy.splice(oldIndex, 1);
-
-				// add the item in the new index
-				allItemsCopy.splice(newIndex, 0, todoItemText);
-
-				// update the list and the UI
-				setAllItems(allItemsCopy);
-			}}
-		>
+		<ul className="ReorderableList">
 			{allItems.map((item, index) => (
-				<ReorderableItemInternal key={index} id={index.toString()}>
+				<ReorderableItemInternal
+					key={index}
+					id={index}
+					handleDragStart={() => handleDragStart(index)}
+					handleDragOver={(event) => handleDragOver(event, index)}
+					handleDrop={handleDrop}
+				>
 					{item}
 				</ReorderableItemInternal>
 			))}

@@ -1,25 +1,35 @@
 import React from "react";
 
 type ReorderableItemInternalProps = {
-	id: string;
+	id: number;
 	children: React.ReactNode;
+	handleDragStart: (index: number) => void;
+	handleDragOver: (event: React.DragEvent<HTMLLIElement>, index: number) => void;
+	handleDrop: () => void;
 };
 
-// TODO: F this noise. Whatever. Fix this shit some other day.
-
-const ReorderableItemInternal = ({ children, id }: ReorderableItemInternalProps) => {
+const ReorderableItemInternal = ({
+	children,
+	id,
+	handleDragStart,
+	handleDragOver,
+	handleDrop,
+}: ReorderableItemInternalProps) => {
 	const [isDragging, setIsDragging] = React.useState(false);
 
 	return (
 		<li
-			id={id}
+			id={id.toString()}
 			className={`ReorderableItem${isDragging ? " Dragging" : ""}`}
 			draggable={true}
 			onDragStart={() => {
 				setTimeout(() => {
 					setIsDragging(true);
+					handleDragStart(id);
 				}, 0);
 			}}
+			onDragOver={(event) => handleDragOver(event, id)}
+			onDrop={handleDrop}
 			onDragEnd={() => {
 				setIsDragging(false);
 			}}
