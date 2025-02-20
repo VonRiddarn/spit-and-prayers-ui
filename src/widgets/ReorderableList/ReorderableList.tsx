@@ -6,6 +6,17 @@ type ReorderableListProps = {
 	items: React.ReactNode[];
 };
 
+/* 
+
+TODO: fix list update
+
+List of pain and suffering (errors):
+* If the itemarray is updated outside of the component the page requires a reload to initialize the new array
+* Items will update the target in real time, but not the origin
+* The target will update with a clean (non .Dragging) version of the item
+
+*/
+
 const ReorderableList = ({ items }: ReorderableListProps) => {
 	const [allItems, setAllItems] = React.useState(items);
 	const [draggedIndex, setDraggedIndex] = React.useState<number | null>(null);
