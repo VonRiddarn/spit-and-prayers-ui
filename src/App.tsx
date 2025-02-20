@@ -3,8 +3,6 @@ import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
-import FodlerStructureVisualizer from "./widgets/VisualFileTree/VisualFileTree";
-import VisualFile from "./widgets/VisualFileTree/VisualFilte/VisualFile";
 import VisualFileTree from "./widgets/VisualFileTree/VisualFileTree";
 import { mockFileTree } from "./widgets/VisualFileTree/mockFileTree";
 
