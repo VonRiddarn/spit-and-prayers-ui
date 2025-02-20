@@ -5,6 +5,7 @@ import LegendInputField from "./components/ui/LegendInputField/LegendInputField"
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
 import VisualFileTree from "./widgets/VisualFileTree/VisualFileTree";
 import { mockFileTree } from "./widgets/VisualFileTree/mockFileTree";
+import { mockFileTreeSecondary } from "./widgets/VisualFileTree/mockFileTreeSecondary";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -101,6 +102,7 @@ function App() {
 			</Accordion>
 			<Accordion title="Folder structure visualizer" interaction="click">
 				<VisualFileTree root={mockFileTree} />
+				<VisualFileTree root={mockFileTreeSecondary} />
 				<p>Known errors:</p>
 				<ul id="VisualFileTree-errors">
 					<li>Tree creates a div for each branch</li>
