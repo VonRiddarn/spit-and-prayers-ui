@@ -101,6 +101,16 @@ function App() {
 			</Accordion>
 			<Accordion title="Folder structure visualizer" interaction="click">
 				<VisualFileTree root={mockFileTree} />
+				<p>Known errors:</p>
+				<ul id="VisualFileTree-errors">
+					<li>Tree creates a div for each branch</li>
+					<li>IndentationStops are hard coded and not prop-drilled</li>
+					<li>Need for margin to create shadows and other effects - overflow?</li>
+				</ul>
+				<p>
+					TODO: Refactor tree creation from a recursive method to a iterative one instead. All
+					children will be collected and created at top layer.
+				</p>
 			</Accordion>
 		</>
 	);
