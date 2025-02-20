@@ -1,20 +1,18 @@
 import React from "react";
 
 type ReorderableItemInternalProps = {
+	id: string;
 	children: React.ReactNode;
-	itemsState: {
-		allItems: React.ReactNode[];
-		setAllItems: React.Dispatch<React.SetStateAction<React.ReactNode[]>>;
-	};
 };
 
 // TODO: F this noise. Whatever. Fix this shit some other day.
 
-const ReorderableItemInternal = ({ children, itemsState }: ReorderableItemInternalProps) => {
+const ReorderableItemInternal = ({ children, id }: ReorderableItemInternalProps) => {
 	const [isDragging, setIsDragging] = React.useState(false);
 
 	return (
 		<li
+			id={id}
 			className={`ReorderableItem${isDragging ? " Dragging" : ""}`}
 			draggable={true}
 			onDragStart={() => {
