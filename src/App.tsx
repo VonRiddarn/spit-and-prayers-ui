@@ -3,9 +3,6 @@ import "./App.scss";
 import Accordion from "./components/ui/Accordion/Accordion";
 import LegendInputField from "./components/ui/LegendInputField/LegendInputField";
 import LegendTextArea from "./components/ui/LegendTextArea/LegendTextArea";
-import VisualFileTree from "./widgets/VisualFileTree/VisualFileTree";
-import { mockFileTree } from "./widgets/VisualFileTree/mockFileTree";
-import { mockFileTreeSecondary } from "./widgets/VisualFileTree/mockFileTreeSecondary";
 
 function App() {
 	const [echoUsername, setEchoUsername] = React.useState("");
@@ -97,22 +94,8 @@ function App() {
 				<h2>Form example:</h2>
 				<LegendInputField title="Name" type="text" placeholder="John Doe" />
 				<LegendInputField title="Email" type="email" placeholder="example.email@example.com" />
-				<LegendInputField title="Phone number" type="text" placeholder="012 - 345 67 89" />
+				<LegendInputField title="Phone number" type="text" placeholder="070 - 123 45 67" />
 				<LegendTextArea title="Message" placeholder="Dear mr company..." />
-			</Accordion>
-			<Accordion title="Folder structure visualizer" interaction="click">
-				<VisualFileTree root={mockFileTree} />
-				<VisualFileTree root={mockFileTreeSecondary} />
-				<p>Known errors:</p>
-				<ul id="VisualFileTree-errors">
-					<li>Tree creates a div for each branch</li>
-					<li>IndentationStops are hard coded and not prop-drilled</li>
-					<li>Need for margin to create shadows and other effects - overflow?</li>
-				</ul>
-				<p>
-					TODO: Refactor tree creation from a recursive method to a iterative one instead. All
-					children will be collected and created at top layer.
-				</p>
 			</Accordion>
 		</>
 	);
